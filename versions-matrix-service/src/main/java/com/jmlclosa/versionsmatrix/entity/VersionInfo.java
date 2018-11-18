@@ -6,28 +6,24 @@ import java.util.Objects;
 import java.util.Set;
 
 public class VersionInfo implements Serializable {
-    private ArtifactId artifactId;
+    private ArtifactId artifact;
     private Set<DependencyInfo> dependencies;
 
     public VersionInfo() {
         this.dependencies = new HashSet<>();
     }
 
-    public VersionInfo(ArtifactId artifactId) {
-        this.artifactId = artifactId;
+    public VersionInfo(ArtifactId artifact) {
+        this.artifact = artifact;
         this.dependencies = new HashSet<>();
     }
 
-    public ArtifactId getArtifactId() {
-        return artifactId;
+    public ArtifactId getArtifact() {
+        return artifact;
     }
 
-    public void setArtifactId(ArtifactId artifactId) {
-        this.artifactId = artifactId;
-    }
-
-    public Set<DependencyInfo> getDependencies() {
-        return dependencies;
+    public void setArtifact(ArtifactId artifact) {
+        this.artifact = artifact;
     }
 
     public void setDependencies(Set<DependencyInfo> dependencies) {
@@ -43,20 +39,20 @@ public class VersionInfo implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         VersionInfo that = (VersionInfo) o;
-        return Objects.equals(artifactId, that.artifactId) &&
-                Objects.equals(dependencies, that.dependencies);
+        return Objects.equals(artifact, that.artifact)
+                && Objects.equals(dependencies, that.dependencies)
+                ;
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(artifactId, dependencies);
+        return Objects.hash(artifact, dependencies);
     }
 
     @Override
     public String toString() {
         return "VersionInfo{" +
-                "artifactId=" + artifactId +
+                "artifact=" + artifact +
                 ", dependencies=" + dependencies +
                 '}';
     }

@@ -3,14 +3,14 @@ package com.jmlclosa.versionsmatrix.entity;
 import java.util.Objects;
 
 public class DependencyInfo {
-    private ArtifactId artifactId;
+    private ArtifactId artifact;
 
-    public ArtifactId getArtifactId() {
-        return artifactId;
+    public ArtifactId getArtifact() {
+        return artifact;
     }
 
-    public void setArtifactId(ArtifactId artifactId) {
-        this.artifactId = artifactId;
+    public void setArtifact(ArtifactId artifact) {
+        this.artifact = artifact;
     }
 
     @Override
@@ -18,19 +18,18 @@ public class DependencyInfo {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         DependencyInfo that = (DependencyInfo) o;
-        return Objects.equals(artifactId, that.artifactId);
+        return Objects.equals(artifact, that.artifact);
     }
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(artifactId);
+        return Objects.hash(artifact);
     }
 
     @Override
     public String toString() {
         return "DependencyInfo{" +
-                "artifactId=" + artifactId +
+                "artifact=" + artifact +
                 '}';
     }
 }
